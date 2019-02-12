@@ -14,14 +14,14 @@
       directives[attrName] = callback;
     },
 
-    compile({ attributes }) {
-      for (let i = 0; i < attributes.length; i++) {
-        const { name } = attributes[i];
+    compile(node) {
+      const { attributes } = node;
 
+      [...attributes].forEach(({ name }) => {
         if (name in directives) {
-          directives[name]();
+          directives[name](node);
         }
-      }
+      });
     },
 
     bootstrap(node) {

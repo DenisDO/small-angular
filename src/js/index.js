@@ -16,10 +16,10 @@
 
     compile({ attributes }) {
       for (let i = 0; i < attributes.length; i++) {
-        const attrName = attributes[i].name;
+        const { name } = attributes[i];
 
-        if (attrName in directives) {
-          directives[attrName]();
+        if (name in directives) {
+          directives[name]();
         }
       }
     }

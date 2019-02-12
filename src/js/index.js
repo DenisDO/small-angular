@@ -31,6 +31,10 @@
         element = document.querySelector('[ng-app]');
       }
 
+      if (!element) {
+        throw new Error('There is no entry point!');
+      }
+      this.compile(element);
       const { children } = element;
       [...children].forEach(el => {
         this.compile(el);

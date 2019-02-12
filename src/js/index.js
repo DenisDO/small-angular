@@ -22,6 +22,19 @@
           directives[name]();
         }
       }
+    },
+
+    bootstrap(node) {
+      let element = node;
+
+      if (!node) {
+        element = document.querySelector('[ng-app]');
+      }
+
+      const { children } = element;
+      [...children].forEach(el => {
+        this.compile(el);
+      });
     }
   };
 

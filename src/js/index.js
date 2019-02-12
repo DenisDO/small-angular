@@ -12,6 +12,16 @@
       }
 
       directives[attrName] = callback;
+    },
+
+    compile({ attributes }) {
+      for (let i = 0; i < attributes.length; i++) {
+        const attrName = attributes[i].name;
+
+        if (attrName in directives) {
+          directives[attrName]();
+        }
+      }
     }
   };
 

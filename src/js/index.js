@@ -1,17 +1,17 @@
 (function() {
-  const directives = [];
+  const directives = {};
 
   const smallAngular = {
     directive(attrName, callback) {
-        if (!attrName || !callback) {
-            throw new Error('Required parameter is missed!');
-        }
+      if (!attrName || !callback) {
+        throw new Error('Required parameter is missed!');
+      }
 
-        if (typeof callback !== 'function') {
-            throw new Error('Callback must be a function!');
-        }
+      if (typeof callback !== 'function') {
+        throw new Error('Callback must be a function!');
+      }
 
-        directives.push({attrName, callback});
+      directives[attrName] = callback;
     }
   };
 

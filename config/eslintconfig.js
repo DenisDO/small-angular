@@ -71,7 +71,7 @@ module.exports = {
     'prefer-promise-reject-errors': 'error',
     'radix': 'error',
     'require-await': 'error',
-    'wrap-iife': 'error',
+    // 'wrap-iife': 'error',
     // variables
     'init-declarations': ['error', 'always'],
     // 'no-shadow': 'error',

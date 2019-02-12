@@ -35,8 +35,7 @@
         throw new Error('There is no entry point!');
       }
       this.compile(element);
-      const { children } = element;
-      [...children].forEach(el => {
+      element.querySelectorAll('*').forEach(el => {
         this.compile(el);
       });
     }

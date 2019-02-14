@@ -1,49 +1,50 @@
 /* global smallAngular */
 
-smallAngular.directive('ng-app', function(rootScope, el) {
+smallAngular.directive('ng-app', function(scope, el) {
   console.log('called directive ng-app on element', el);
 });
 
-smallAngular.directive('ng-init', function(rootScope, el) {
+smallAngular.directive('ng-init', function(scope, el) {
   const data = el.getAttribute('ng-init');
-  rootScope.eval(data);
+  scope.eval(data);
 });
 
-smallAngular.directive('ng-show', function(rootScope, el) {
+smallAngular.directive('ng-show', function(scope, el) {
   const attrValue = el.getAttribute('ng-show');
   el.style.display = eval(attrValue) ? 'block' : 'none';
 
-  rootScope.$watch('ng-show', () => {
+  scope.$watch('ng-show', () => {
     el.style.display = eval(attrValue) ? 'block' : 'none';
   });
 });
 
-smallAngular.directive('ng-hide', function(rootScope, el) {
+smallAngular.directive('ng-hide', function(scope, el) {
   const attrValue = el.getAttribute('ng-hide');
   el.style.display = eval(attrValue) ? 'none' : 'block';
 
-  rootScope.$watch('ng-hide', () => {
+  scope.$watch('ng-hide', () => {
     el.style.display = eval(attrValue) ? 'none' : 'block';
   });
 });
 
-smallAngular.directive('ng-click', function(rootScope, el) {
+smallAngular.directive('ng-click', function(scope, el) {
   el.addEventListener('click', () => {
     const attrValue = el.getAttribute('ng-click');
     eval(attrValue);
   });
 
-  rootScope.$apply();
+  scope.$apply();
 });
 
-smallAngular.directive('ng-model', function(rootScope, el) {
+smallAngular.directive('ng-model', function(scope, el) {
   console.log('called directive ng-model on element', el);
 });
 
-smallAngular.directive('ng-make-short', function(rootScope, el) {
-  console.log('called directive ng-make-short on element', el);
+smallAngular.directive('ng-make-short', function(scope, el) {
+  const length = el.getAttribute('length');
+  el.innerHTML = el.innerHTML.slice(0, length);
 });
 
-smallAngular.directive('ng-bind', function(rootScope, el) {
+smallAngular.directive('ng-bind', function(scope, el) {
   console.log('called directive ng-bind on element', el);
-});
+})

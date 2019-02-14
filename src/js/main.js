@@ -9,7 +9,8 @@ smallAngular.directive('ng-init', function(el) {
 });
 
 smallAngular.directive('ng-show', function(el) {
-  console.log('called directive ng-show on element', el);
+  const attrValue = el.getAttribute('ng-show');
+  el.style.display = eval(attrValue) ? 'block' : 'none';
 });
 
 smallAngular.directive('ng-model', function(el) {

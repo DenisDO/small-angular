@@ -51,5 +51,4 @@
   };
 
   window.smallAngular = smallAngular;
-  window.watchers = watchers;
 })();

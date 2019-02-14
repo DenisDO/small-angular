@@ -39,7 +39,7 @@ module.exports = {
     'no-alert': 'error',
     'no-caller': 'error',
     'no-empty-function': 'error',
-    'no-eval': 'error',
+    // 'no-eval': 'error',
     'no-extend-native': 'error',
     'no-floating-decimal': 'error',
     'no-implicit-coercion': 'error',

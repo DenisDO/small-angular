@@ -72,6 +72,9 @@ smallAngular.directive('ng-bind', function(scope, el) {
 
   if (data in scope) {
     el.innerHTML = eval(data);
+    scope.$watch('ng-bind', () => {
+      el.innerHTML = eval(data);
+    });
   }
 });
 

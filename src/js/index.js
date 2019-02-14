@@ -1,5 +1,15 @@
 (function() {
   const directives = {};
+  const watchers = [];
+  const rootScope = window;
+
+  rootScope.$watch = (name, watcher) => {
+    watchers.push({ name, watcher });
+  };
+
+  rootScope.$apply = () => {
+    watchers.forEach(({ watcher }) => watcher());
+  };
 
   const smallAngular = {
     directive(attrName, callback) {
@@ -40,4 +50,5 @@
   };
 
   window.smallAngular = smallAngular;
+  window.watchers = watchers;
 })();

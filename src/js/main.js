@@ -46,5 +46,9 @@ smallAngular.directive('ng-make-short', function(scope, el) {
 });
 
 smallAngular.directive('ng-bind', function(scope, el) {
-  console.log('called directive ng-bind on element', el);
+  const data = el.getAttribute('ng-bind');
+
+  if (data in scope) {
+    el.innerHTML = eval(data);
+  }
 })

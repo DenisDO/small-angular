@@ -5,7 +5,8 @@ smallAngular.directive('ng-app', function(rootScope, el) {
 });
 
 smallAngular.directive('ng-init', function(rootScope, el) {
-  console.log('called directive ng-init on element', el);
+  const data = el.getAttribute('ng-init');
+  rootScope.eval(data);
 });
 
 smallAngular.directive('ng-show', function(rootScope, el) {

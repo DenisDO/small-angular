@@ -17,6 +17,20 @@ smallAngular.directive('ng-init', function(scope, el) {
   scope.eval(data);
 });
 
+smallAngular.directive('ng-repeat', function(scope, el) {
+  const parent = el.parentElement;
+  const data = eval(el.getAttribute('ng-repeat'));
+  const quantity = data.length;
+
+  for (let i = 0; i < quantity; i++) {
+    const newNode = el.cloneNode();
+    newNode.innerHTML = data[i];
+    parent.appendChild(newNode);
+  }
+
+  parent.removeChild(el);
+});
+
 smallAngular.directive('ng-show', function(scope, el) {
   const attrValue = el.getAttribute('ng-show');
   el.style.display = eval(attrValue) ? 'block' : 'none';
@@ -60,3 +74,5 @@ smallAngular.directive('ng-bind', function(scope, el) {
     el.innerHTML = eval(data);
   }
 });
+
+smallAngular.bootstrap();

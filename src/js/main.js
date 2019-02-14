@@ -17,6 +17,15 @@ smallAngular.directive('ng-show', function(rootScope, el) {
   });
 });
 
+smallAngular.directive('ng-hide', function(rootScope, el) {
+  const attrValue = el.getAttribute('ng-hide');
+  el.style.display = eval(attrValue) ? 'none' : 'block';
+
+  rootScope.$watch('ng-hide', () => {
+    el.style.display = eval(attrValue) ? 'none' : 'block';
+  });
+});
+
 smallAngular.directive('ng-click', function(rootScope, el) {
   el.addEventListener('click', () => {
     const attrValue = el.getAttribute('ng-click');

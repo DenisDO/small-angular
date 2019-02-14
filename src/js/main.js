@@ -53,9 +53,8 @@ smallAngular.directive('ng-click', function(scope, el) {
   el.addEventListener('click', () => {
     const attrValue = el.getAttribute('ng-click');
     eval(attrValue);
+    scope.$apply();
   });
-
-  scope.$apply();
 });
 
 smallAngular.directive('ng-model', function(scope, el) {

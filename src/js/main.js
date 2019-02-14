@@ -4,6 +4,14 @@ smallAngular.directive('ng-app', function(scope, el) {
   console.log('called directive ng-app on element', el);
 });
 
+smallAngular.directive('ng-random-color', function(scope, el) {
+  el.addEventListener('click', () => {
+    const hex = Math.floor(Math.random() * 0xFFFFFF);
+    const color = '#' + ('000000' + hex.toString(16)).substr(-6);
+    el.style.backgroundColor = color;
+  });
+});
+
 smallAngular.directive('ng-init', function(scope, el) {
   const data = el.getAttribute('ng-init');
   scope.eval(data);
@@ -51,4 +59,4 @@ smallAngular.directive('ng-bind', function(scope, el) {
   if (data in scope) {
     el.innerHTML = eval(data);
   }
-})
+});

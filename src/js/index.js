@@ -26,6 +26,7 @@
       }
 
       directives[attrName] = callback;
+      rootScope.$watch(attrName, callback);
     },
 
     compile(node) {

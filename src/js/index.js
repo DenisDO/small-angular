@@ -26,7 +26,6 @@
       }
 
       directives[attrName] = callback;
-      rootScope.$watch(attrName, callback);
     },
 
     compile(node) {
@@ -34,7 +33,7 @@
 
       attributes.forEach(name => {
         if (name in directives) {
-          directives[name](node);
+          directives[name](rootScope, node);
         }
       });
     },

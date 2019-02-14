@@ -13,6 +13,13 @@ smallAngular.directive('ng-show', function(el) {
   el.style.display = eval(attrValue) ? 'block' : 'none';
 });
 
+smallAngular.directive('ng-click', function(el) {
+  el.addEventListener('click', () => {
+    const attrValue = el.getAttribute('ng-click');
+    eval(attrValue);
+  });
+});
+
 smallAngular.directive('ng-model', function(el) {
   console.log('called directive ng-model on element', el);
 });

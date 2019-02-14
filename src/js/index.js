@@ -29,19 +29,13 @@
     },
 
     bootstrap(node) {
-      let entryPoint = node;
-
-      if (!node) {
-        entryPoint = document.querySelector('[ng-app]');
-      }
+      const entryPoint = node || document.querySelector('[ng-app]');
 
       if (!entryPoint) {
-        throw new Error('There is no entry point!');
+        return;
       }
       this.compile(entryPoint);
-      entryPoint.querySelectorAll('*').forEach(el => {
-        this.compile(el);
-      });
+      entryPoint.querySelectorAll('*').forEach(this.compile);
     }
   };
 

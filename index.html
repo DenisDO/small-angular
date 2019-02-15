@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link rel="stylesheet" href="public/css/style.css">
-    <script async src="src/js/index.js"></script>
-    <script async src="src/js/main.js"></script>
     <title>My App</title>
+    <link rel="stylesheet" href="public/css/style.css">
+    <script defer src="src/js/index.js"></script>
+    <script defer src="src/js/default_directives.js"></script>
+    <script defer src="src/js/custom_directives.js"></script>
+    <script defer src="src/js/main.js"></script>
   </head>
   
   <body ng-app ng-init="name='ivan', age=25">
-    <div ng-show="true" ng-random-color> hi Ivan!!! </div>
+    <div ng-show="true" random-color> hi Ivan!!! </div>
     <input ng-model="name"/>
-    <p ng-make-short length="9">qqq qqq qqq qqq qqq qqq qqq</p>
+    <p make-short length="9">qqq qqq qqq qqq qqq qqq qqq</p>
     <button ng-click="alert('ng-click test')">Click me!</button>
     <button ng-click="name='Vasya'">Click me too!</button>
     <p ng-bind="name"></p>

@@ -12,3 +12,7 @@ smallAngular.directive('make-short', function(scope, el) {
   const length = el.getAttribute('length') || 5;
   el.innerHTML = el.innerHTML.slice(0, length);
 });
+
+smallAngular.directive('uppercase', function(scope, el) {
+  el.innerHTML = el.innerHTML.toUpperCase();
+});

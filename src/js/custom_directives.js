@@ -16,3 +16,7 @@ smallAngular.directive('make-short', function(scope, el) {
 smallAngular.directive('uppercase', function(scope, el) {
   el.innerHTML = el.innerHTML.toUpperCase();
 });
+
+smallAngular.directive('lowercase', function(scope, el) {
+  el.innerHTML = el.innerHTML.toLowerCase();
+});

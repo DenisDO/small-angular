@@ -60,6 +60,10 @@ smallAngular.directive('ng-model', function(scope, el) {
     eval(`${attrValue} = el.value`);
     scope.$apply();
   });
+
+  scope.$watch(() => attrValue, () => {
+    el.value = eval(attrValue);
+  });
 });
 
 smallAngular.directive('ng-bind', function(scope, el) {

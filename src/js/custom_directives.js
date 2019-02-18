@@ -10,13 +10,13 @@ smallAngular.directive('random-color', function(scope, el) {
 
 smallAngular.directive('make-short', function(scope, el) {
   const length = el.getAttribute('length') || 5;
-  el.innerHTML = el.innerHTML.slice(0, length);
+  el.innerText = el.innerText.slice(0, length);
 });
 
 smallAngular.directive('uppercase', function(scope, el) {
-  el.innerHTML = el.innerHTML.toUpperCase();
+  el.innerText = el.innerText.toUpperCase();
 });
 
 smallAngular.directive('lowercase', function(scope, el) {
-  el.innerHTML = el.innerHTML.toLowerCase();
+  el.innerText = el.innerText.toLowerCase();
 });

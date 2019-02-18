@@ -70,9 +70,9 @@ smallAngular.directive('ng-bind', function(scope, el) {
   const data = el.getAttribute('ng-bind');
 
   if (data in scope) {
-    el.innerHTML = eval(data);
+    el.innerText = eval(data);
     scope.$watch(() => data, () => {
-      el.innerHTML = eval(data);
+      el.innerText = eval(data);
     });
     scope.$apply();
   }

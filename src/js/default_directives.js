@@ -10,7 +10,7 @@ smallAngular.directive('ng-repeat', function(scope, el) {
   const collectionName = data.split(' ')[2];
   const parent = el.parentElement;
 
-  const repeatFunc = () => {
+  const repeater = () => {
     const value = scope[collectionName];
     const similarEls = document.querySelectorAll(`[ng-repeat="${data}"]`);
 
@@ -23,9 +23,9 @@ smallAngular.directive('ng-repeat', function(scope, el) {
     similarEls.forEach(el => el.remove());
   };
 
-  repeatFunc();
+  repeater();
 
-  scope.$watch(() => collectionName, repeatFunc);
+  scope.$watch(() => collectionName, repeater);
 });
 
 smallAngular.directive('ng-show', function(scope, el) {

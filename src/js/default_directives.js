@@ -41,7 +41,7 @@ smallAngular.directive('ng-hide', function(scope, el) {
   const attrValue = el.getAttribute('ng-hide');
   el.style.display = eval(attrValue) ? 'none' : 'block';
 
-  scope.$watch(() => attrValue, () => {
+  scope.$watch(eval(attrValue), () => {
     el.style.display = eval(attrValue) ? 'none' : 'block';
   });
 });

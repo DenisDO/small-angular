@@ -12,7 +12,7 @@ smallAngular.directive('ng-repeat', function(scope, el) {
 
   scope.$watch(() => collectionName, () => {
     const value = scope[collectionName];
-    const similarEls = Array.from(document.querySelectorAll(`[ng-repeat="${data}"]`));
+    const similarEls = document.querySelectorAll(`[ng-repeat="${data}"]`);
 
     for (const item of value) {
       const clonedEl = el.cloneNode();

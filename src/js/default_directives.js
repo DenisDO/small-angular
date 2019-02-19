@@ -74,6 +74,5 @@ smallAngular.directive('ng-bind', function(scope, el) {
     scope.$watch(() => data, () => {
       el.innerText = eval(data);
     });
-    scope.$apply();
   }
 });

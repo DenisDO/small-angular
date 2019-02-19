@@ -65,7 +65,7 @@ smallAngular.directive('ng-model', function(scope, el) {
     scope.$apply();
   });
 
-  scope.$watch(() => attrValue, () => {
+  scope.$watch(attrValue, () => {
     el.value = eval(attrValue);
   });
 });

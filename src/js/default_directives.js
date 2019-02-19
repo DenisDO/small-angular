@@ -69,10 +69,8 @@ smallAngular.directive('ng-model', function(scope, el) {
 smallAngular.directive('ng-bind', function(scope, el) {
   const data = el.getAttribute('ng-bind');
 
-  if (data in scope) {
+  el.innerText = eval(data);
+  scope.$watch(() => data, () => {
     el.innerText = eval(data);
-    scope.$watch(() => data, () => {
-      el.innerText = eval(data);
-    });
-  }
+  });
 });

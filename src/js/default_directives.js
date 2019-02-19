@@ -20,9 +20,7 @@ smallAngular.directive('ng-repeat', function(scope, el) {
       parent.appendChild(clonedEl);
     }
 
-    for (const el of similarEls) {
-      el.remove();
-    }
+    similarEls.forEach(el => el.remove());
   };
 
   repeatFunc();

@@ -7,7 +7,7 @@ smallAngular.directive('ng-init', function(scope, el) {
 
 smallAngular.directive('ng-repeat', function(scope, el) {
   const data = el.getAttribute('ng-repeat');
-  const collectionName = data.split(' ')[2];
+  const [, , collectionName] = data.split(' ');
   const parent = el.parentElement;
 
   const repeater = () => {

@@ -46,6 +46,7 @@
       }
       this.compile(entryPoint);
       entryPoint.querySelectorAll('*').forEach(this.compile);
+      rootScope.$apply();
     }
   };
 
